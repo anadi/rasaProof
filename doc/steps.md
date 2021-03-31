@@ -20,3 +20,32 @@ More log statement
 ## 3 Reduce the models to greet and bot challenge and retrain
 
 ### Modify domain.yml
+
+Remove All intents other then greet and bot_challenge.
+Remove the related responses.
+
+### Modify nlu.yml
+
+Remove all examples other then greet and bot_challenge
+
+### Modify rules.yml
+
+Remove all rules other then bot_challenge
+
+### Modify stories.yml
+
+Modify to have one happy and one sad path
+
+### Train again
+
+```
+$ docker run -u $(id -u):$(id -g) -v $(pwd):/app rasa/rasa:2.4.3-full train
+```
+
+### Play with model
+
+Note the -it option, very important:
+
+```
+$ docker run -it -u $(id -u):$(id -g) -v $(pwd):/app rasa/rasa:2.4.3-full  shell
+```
