@@ -1,5 +1,17 @@
 # Steps in building the model
 
+## 0 Plan
+
+1. Formalize the problem. [See](Formulation-1.md)
+1. Remove everything else but greeting and bot_challenge based artifiacts from the model. See Initialize the default model section below.
+1. [Install](rasaxInstall/setup.md) Rasa X for ease and demo
+1. [Import](rasaxInstall/import.md) the reduced default model into rasax
+1. Prepare intent entity causality for integer sum problem.
+1. Get a method to start with bot saying the problem statement in the begining
+1. Prepare an ordered list filling with dialogue for causality
+1. Prepare next hint system. Memory hint and if that doesn't work expose hint
+1. Detect Impasse in dialogue
+
 ## 1 Formalize problem 
 
 See First try [Formulation-1.md](Formulation-1.md)
@@ -49,3 +61,7 @@ Note the -it option, very important:
 ```
 $ docker run -it -u $(id -u):$(id -g) -v $(pwd):/app rasa/rasa:2.4.3-full  shell
 ```
+
+## Add custom component to check causality of proof
+
+See 3. Rasa NLU - Custom Components/5. 5. Introducing Custom Component Class - Profanity Filter Part 1.mp4
