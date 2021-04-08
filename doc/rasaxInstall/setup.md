@@ -350,3 +350,21 @@ localhost                  : ok=57   changed=27   unreachable=0    failed=0    s
 
 
 ```
+
+# Run rasa x
+
+Start up Rasa X and wait until all containers are running (-d will run Rasa X in the background):
+
+```
+cd /etc/rasa
+sudo docker-compose up -d
+
+kvmuser@rasax-server:/etc/rasa
+$ sudo python3 rasa_x_commands.py create --update admin me ilovenlp
+2021-04-07 11:27:09.522672: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory
+2021-04-07 11:27:09.522870: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-5um2230g because the default path (/tmp/.pip/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+INFO:__main__:Created user.
+
+```
+
